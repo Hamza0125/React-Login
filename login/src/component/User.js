@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import '../assets/Login.css'
+import '../assets/User.css'
 
 
-const Login = () => {
+const User = () => {
     
     const [userRegistration, setuserRegistration] = useState({
         email:"",
-        fullname:"",
         password:""
 
     });
@@ -25,7 +24,7 @@ const Login = () => {
         const newRecord = {...userRegistration, id : new Date().getTime().toString()}
         setRecords([...records,newRecord]);
         console.log(newRecord);
-        setuserRegistration({fullname:'',email:'',password:''})
+        setuserRegistration({email:'',password:''})
     }
 
     const [records, setRecords] = useState ([]);
@@ -35,16 +34,9 @@ const Login = () => {
             <div className='main_div'>
                 <div className='inner'>
 
-                      <h1>
-                          Register Here
+                      <h1 style={{}}>
+                          LoginIn  
                       </h1>
-
-            <div>
-                <label htmlFor='Full Name'>Full Name</label>
-                <input type='text' name='fullname' value={userRegistration.fullname}
-                 placeholder='Full Name'
-                onChange={handleInput}/>
-            </div>
 
             <div>
                 <label htmlFor='Email'>Email</label>
@@ -59,18 +51,14 @@ const Login = () => {
                 <input type='password' name='password' value={userRegistration.password}
                 placeholder="Password"
                 onChange={handleInput}/>
+ 
             </div>
 
-            <div style={{marginTop: 15, lineHeight: "0.7em"}}>
-                <input type= "checkbox" id='checkbox' name='signup'/> 
-                <label htmlFor='checkbox'> By signing up you accept the 
-                <strong style={{color: "#323232"}}> Terms of Service and Privacy Policy</strong> </label>
-            </div>
-
-            <button type='submit'>Sign up</button>
+            <button type='submit'>SignIn</button>
 
             <p style={{marginTop:15}}>Already have an account?
-            <strong style={{color: "#323232", fontWeight:'bolder'}}> <a href="#">Sign In</a></strong> </p>
+            <strong style={{color: "#323232", fontWeight:'bolder'}}> <a href='#'>Sign Up</a></strong> </p>
+
 
                 </div>
             </div>
@@ -82,7 +70,6 @@ const Login = () => {
     records.map((curElem)=>{
         return(
             <div className='showdata' key={curElem.id}>
-                <p>{curElem.fullname}</p>
                 <p>{curElem.email}</p>
                 <p>{curElem.password}</p>
             </div>
@@ -98,4 +85,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default User;

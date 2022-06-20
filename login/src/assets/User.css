@@ -50,19 +50,6 @@ button{
     font-size: 1.05rem;
     cursor: pointer;
 }
-
-#checkbox{
-    width: 17px;
-    height: 17px;
-}
-#checkbox > input{
-    margin: .4rem;
-}
-input[type=checkbox]{
-    vertical-align: middle;
-    position: relative;
-    bottom: 1px;
-}
 .showdata{
     width: auto;
     height: auto;
